@@ -22,6 +22,8 @@ int main(){
 
     vector<int> arr(5);
     arr.push_back(2);
+    
+    cout<<arr.size()<<endl;
     cout<<arr.capacity()<<endl;
 
     return 0;
