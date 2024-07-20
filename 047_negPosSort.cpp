@@ -29,6 +29,7 @@ void printArray(int arr[], int size){
 //     }
 // }
 
+// ! 3 pointer approach -->
 void sortNegPos(int arr[], int size){
     int start = 0;
     int end = size - 1;
