@@ -12,3 +12,5 @@ int firstRepeated(vector<int> &arr){
     }
     return -1;
 }
+
+// ! Use Hashing;
