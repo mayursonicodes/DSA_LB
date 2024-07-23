@@ -7,7 +7,7 @@ using namespace std;
 int lastOccurance(vector<int> arr, int target){
 
     int start = 0;
-    int end = arr.size();
+    int end = arr.size() - 1;
     int mid = start + (end - start) / 2;
     int ans = -1;
 

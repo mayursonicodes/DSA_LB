@@ -7,7 +7,7 @@ using namespace std;
 int binarySearch(vector<int> &arr, int target){
 
     int start = 0;
-    int end = arr.size();
+    int end = arr.size() - 1;
     // ! Important
     int mid = start + (end - start) / 2;
     int count = 0;
@@ -36,8 +36,8 @@ int binarySearch(vector<int> &arr, int target){
 
 int main(){
 
-    vector<int> arr{1,2,3,4,5,6,7,8,9};
-    if(binarySearch(arr, 5))
+    vector<int> arr{1,2,3,4,5,6,7,8};
+    if(binarySearch(arr, 2))
         cout<<"Target found";
     else
         cout<<"Target not found";

@@ -11,7 +11,6 @@ vector<int> factorial(int N){
     
     int carry = 0;
 
-
     for(int i = 2; i <= N; i++){
         for(int j = 0; j < ans.size(); j++){
             int digit = ans[j] * i + carry;
