@@ -11,6 +11,7 @@ vector<string> subString(string name){
     for(int i = 0; i < name.length(); i++){
         for(int j = i + 1; j <= name.length(); j++){
             subTexts.push_back(name.substr(i, j-i));
+            // ! substr(starting_Position, number_of_elements)
         }
     }
     return subTexts;
@@ -18,7 +19,7 @@ vector<string> subString(string name){
 
 int main(){
 
-    string name = "abc";
+    string name = "abcd";
     vector<string> name2 = subString(name);
     for(auto i: name2){
         cout<<i<<endl;

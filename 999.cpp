@@ -1,23 +1,18 @@
-// ! Convert the given string to upper case -->
+// sort
 
-#include<iostream>
-#include<vector>
-#include<string.h>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
-void convertUpperCase(char arr[]){
-    for(int i = 0; i < strlen(arr); i++){
-        arr[i] = arr[i] - 'a' + 'A';
+int main() {
+    int arr[] = {5, 3, 8, 1, 9};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    sort(arr[0], arr[2]);
+
+    std::cout << "Sorted array: ";
+    for (int i = 0; i < size; i++) {
+        std::cout << arr[i] << " ";
     }
-}
-
-int main(){
-
-    char name[100];
-    cout<<"Enter your name: ";
-    cin.getline(name, 100);
-
-    cout<<strlen(name);
-    
     return 0;
 }
