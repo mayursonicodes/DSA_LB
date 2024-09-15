@@ -1,18 +1,15 @@
-// sort
+// custom comparator
+// isalpha
+// tolower
 
 #include <iostream>
 #include <algorithm>
 using namespace std;
 
-int main() {
-    int arr[] = {5, 3, 8, 1, 9};
-    int size = sizeof(arr) / sizeof(arr[0]);
+int main(){
 
-    sort(arr[0], arr[2]);
+    int arr[4] = {10,20,30,40};
+    int *p = &arr[2];
 
-    std::cout << "Sorted array: ";
-    for (int i = 0; i < size; i++) {
-        std::cout << arr[i] << " ";
-    }
     return 0;
 }
