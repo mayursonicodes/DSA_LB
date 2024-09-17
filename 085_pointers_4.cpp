@@ -4,6 +4,7 @@ using namespace std;
 
 void change(int *p){
     cout<<"Value store in *p is "<<p<<endl;
+    // p = p+10; //? not give desire output
     *p = *p+10;
 }
 

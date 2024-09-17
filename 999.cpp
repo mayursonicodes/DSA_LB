@@ -1,15 +1,11 @@
-// custom comparator
-// isalpha
-// tolower
-
-#include <iostream>
-#include <algorithm>
+#include<iostream>
+#include<vector>
+#include<string.h>
 using namespace std;
 
 int main(){
-
-    int arr[4] = {10,20,30,40};
-    int *p = &arr[2];
-
+    string s = "mAyU";
+    s[1] = tolower(s[1]);
+    cout<<endl<<s;
     return 0;
 }
