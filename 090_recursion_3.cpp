@@ -3,10 +3,10 @@
 #include<string.h>
 using namespace std;
 
-void reverseCount(int n){
+void assendingCount(int n){
     if(n == 0) return;
 
-    reverseCount(n-1);
+    assendingCount(n-1);
 
     cout<<n<<" ";
     
@@ -18,7 +18,7 @@ int main(){
     cout<<"Enter your number: ";
     cin>>n;
 
-    reverseCount(n);
+    assendingCount(n);
 
     return 0;
 }
