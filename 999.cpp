@@ -1,19 +1,28 @@
-#include<iostream>
-#include<vector>
-#include<string.h>
-using namespace std;
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int maxi = -1;
+        int maxiindex = -1;
+        int mini = prices[0];
+        int miniindex = 0;
 
-void change(int arr[]){
-    arr[2] = 100;
-}
+        for(int i=1; i<prices.size(); i++){
+            if(prices[i] < mini){
+                miniindex = i;
+                mini = prices[i];
+            }
+        }
 
-int main(){
+        for(int i = miniindex; i<prices.size(); i++){
+            if(prices[i] > maxi){
+                maxiindex = i;
+                maxi = prices[i];
+            }
+        }
 
-    int arr[] = {1,2,3,4,5,6,7,8,9};
+        if(maxi==-1) return 0;
 
-    cout<<arr[2]<<endl;
-    change(arr);
-    cout<<arr[2];
-
-    return 0;
-}
+        int ans = prices[maxiindex] - prices[miniindex];
+        return ans;
+    }
+};
