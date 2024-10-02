@@ -1,28 +1,18 @@
-class Solution {
-public:
-    int maxProfit(vector<int>& prices) {
-        int maxi = -1;
-        int maxiindex = -1;
-        int mini = prices[0];
-        int miniindex = 0;
+#include<iostream>
+#include<vector>
+#include<string.h>
+using namespace std;
 
-        for(int i=1; i<prices.size(); i++){
-            if(prices[i] < mini){
-                miniindex = i;
-                mini = prices[i];
-            }
-        }
+int main(){
 
-        for(int i = miniindex; i<prices.size(); i++){
-            if(prices[i] > maxi){
-                maxiindex = i;
-                maxi = prices[i];
-            }
-        }
+    int arr[] = {8,1,3,4,20,50,30};
 
-        if(maxi==-1) return 0;
+    int pivotIndex = 5;
+    int pivotElement = arr[pivotIndex];
+    cout<<pivotElement<<endl;
 
-        int ans = prices[maxiindex] - prices[miniindex];
-        return ans;
-    }
-};
+    pivotIndex = 4;
+    cout<<pivotElement<<endl;
+
+    return 0;
+}

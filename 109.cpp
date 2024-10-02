@@ -22,8 +22,19 @@ int partition(int arr[], int start, int end){
     pivotIndex = rightIndex;
 
     //todo transfering smaller elements to left, larger elements to right of pivot element
-    
+    int i = start;
+    int j = end;
 
+    while(i<pivotIndex && j>pivotIndex){
+        while(arr[i] <= pivotElement) i++;
+        while(arr[j] > pivotElement) j--;
+
+        if(i<pivotIndex && j>pivotIndex){
+            swap(arr[i], arr[j]);
+        }
+    }
+
+    return pivotIndex;
 }
 
 void quickSort(int arr[], int start, int end){
@@ -40,11 +51,15 @@ void quickSort(int arr[], int start, int end){
 
 int main(){
 
-    int arr[] = {8,1,3,4,20,50,30};
+    int arr[] = {8,1,3,4,20,50,5,1,1,1,2,2,50,30};
     int start = 0;
     int end = sizeof(arr)/sizeof(int) - 1;
 
     quickSort(arr, start, end);
+
+    for(auto i: arr){
+        cout<<i<<" ";
+    }
 
     return 0;
 }
