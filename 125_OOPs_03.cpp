@@ -1,4 +1,4 @@
-//! Difference between compile time & run time polymorphism
+//! Difference between compile time & run time compileation
 
 #include<iostream>
 #include<vector>
