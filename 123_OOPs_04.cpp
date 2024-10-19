@@ -1,3 +1,6 @@
+//! ctor --> constructor
+//! dtor --> destructor
+
 #include<iostream>
 #include<vector>
 #include<string.h>
