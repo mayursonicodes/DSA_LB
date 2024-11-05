@@ -104,6 +104,7 @@ void insertAtPosition(Node* &head, Node* &tail, int data, int position){
     previous->next = newNode;
 }
 
+//! Delete node from LL
 void deleteNode(Node* &head, Node* &tail, int position){
     if(head == NULL){
         cout<<"Cannot delete, LL is empty";
@@ -121,17 +122,28 @@ void deleteNode(Node* &head, Node* &tail, int position){
     int len = findLength(head);
     if(position == len){
         int i = 1;
-        Node *prev = head;
+        Node *previous = head;
         while(i < position-1){
-            prev = prev->next;
+            previous = previous->next;
             i++;
         }
-        prev->next = NULL;
+        previous->next = NULL;
         Node *temp = tail;
-        tail = prev;
+        tail = previous;
         delete temp;
         return;
     }
+
+    int i = 1;
+    Node *previous = head;
+    while(i < position-1){
+        previous = previous->next;
+        i++;
+    }
+    Node *current = previous->next;
+    previous->next = current->next;
+    current->next = NULL;
+    delete current;
 }
 
 int main(){
@@ -157,7 +169,7 @@ int main(){
     cout<<"LL after insertion: ";
     print(head);
 
-    deleteNode(head, tail, 8);
+    deleteNode(head, tail, 2);
     cout<<"LL after deletion: ";
     print(head);
 
