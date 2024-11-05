@@ -171,9 +171,7 @@ int main(){
 
     deleteNode(head, tail, 2);
     cout<<"LL after deletion: ";
-    print(head);
-
-    
+    print(head);  
 
     return 0;
 }
