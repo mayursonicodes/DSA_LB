@@ -33,6 +33,7 @@ void print(Node *head){
         cout<<temp->data<<" ";
         temp = temp->next;
     }
+    cout<<endl;
 }
 
 int main(){
@@ -49,6 +50,8 @@ int main(){
     fourth->next = fifth;
 
     print(first);
+
+    cout<<first->next->next->next->data;
 
     return 0;
 }

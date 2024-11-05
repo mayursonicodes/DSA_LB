@@ -30,6 +30,7 @@ void print(Node *head){
     cout<<endl;
 }
 
+//! Inserting Node at head
 void insertAtHead(Node* &head, int x){
     Node *newNode = new Node(x);
     newNode->next = head;
