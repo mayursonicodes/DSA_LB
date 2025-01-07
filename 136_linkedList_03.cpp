@@ -163,8 +163,11 @@ int main(){
     insertAtTail(head, tail, 200);
     insertAtTail(head, tail, 300);
 
+    cout<<"LL after insertion: ";
+    print(head);
+    
     //! Insert 999 after 2nd node
-    insertAtPosition(head, tail, 999, 12);
+    insertAtPosition(head, tail, 999, 2);
 
     cout<<"LL after insertion: ";
     print(head);
