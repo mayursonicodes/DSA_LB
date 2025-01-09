@@ -1,8 +1,3 @@
-// head insert
-// tail insert
-// position insert
-// length of LL
-
 #include<iostream>
 #include<vector>
 #include<string.h>
@@ -24,6 +19,10 @@ class Node{
             this->data = x;
             this->next = NULL;
             this->prev = NULL;
+        }
+
+        ~Node(){
+            cout<<"Node deleted"<<endl;
         }
 };
 
@@ -112,6 +111,62 @@ void insertAtPosition(Node* &head, Node* &tail, int position, int x){
     currentNode->prev = newNode;
 }
 
+//! Delete node from LL
+void deleteNode(Node* &head, Node* &tail, int position){
+    if(head == NULL){
+        cout<<"Linked List is empty";
+        return;
+    }
+
+    if(head->next == NULL){
+        Node *temp = head;
+        head = NULL;
+        tail = NULL;
+        delete temp;
+        return;
+    }
+
+    int len = findLength(head);
+    if(position > len){
+        cout<<"Enter valid position."<<endl;
+    }
+
+    if(position == 1){
+        Node *temp = head;
+        head = head->next;
+        head->prev = NULL;
+        temp->next = NULL;
+        delete temp;
+        return; 
+    }
+    
+    if(position == len){
+        Node *temp = tail;
+        tail = tail->prev;
+        temp->prev = NULL;
+        tail->next = NULL;
+        delete temp;
+        return;
+    }
+
+    //todo Delete from middle of LL
+    int i = 1;
+    Node *left = head;
+    while(i < position-1){
+        left = left->next;
+        i++;
+    }
+    Node *current = left->next;
+    Node *right = current->next;
+
+    left->next = right;
+    right->prev = left;
+    current->next = NULL;
+    current->prev = NULL;
+    delete current;
+
+}
+
 int main(){
 
     Node *head = NULL;
@@ -126,7 +181,9 @@ int main(){
     insertAtTail(head, tail, 300);
 
     insertAtPosition(head, tail, 4, 999);
+    print(head);
 
+    deleteNode(head, tail, 8);
     print(head);
 
     return 0;
