@@ -9,23 +9,23 @@ positionFromTail = 2
 Each of the data values matches its distance from the tail. The value 2 is at the desired position.
 */
 
-void findKNode(SinglyLinkedListNode* &head, int &positionFromTail, int &ans){
+// void findKNode(SinglyLinkedListNode* &head, int &positionFromTail, int &ans){
     
-    SinglyLinkedListNode* temp = head;
+//     SinglyLinkedListNode* temp = head;
     
-    if(temp == NULL)
-        return;
+//     if(temp == NULL)
+//         return;
         
-    findKNode(temp->next, positionFromTail, ans);
+//     findKNode(temp->next, positionFromTail, ans);
     
-    if(positionFromTail == 0)
-        ans = temp->data;
+//     if(positionFromTail == 0)
+//         ans = temp->data;
     
-    positionFromTail--;    
-}
+//     positionFromTail--;    
+// }
 
-int getNode(SinglyLinkedListNode* llist, int positionFromTail) {
-    int ans;
-    findKNode(llist, positionFromTail, ans);
-    return ans;
-}
+// int getNode(SinglyLinkedListNode* llist, int positionFromTail) {
+//     int ans;
+//     findKNode(llist, positionFromTail, ans);
+//     return ans;
+// }
