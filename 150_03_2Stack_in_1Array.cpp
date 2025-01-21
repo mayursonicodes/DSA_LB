@@ -18,6 +18,7 @@ class Stack{
             top2 = size;
         }
 
+        //! Initialized all values of array to 0
         void allZero(){
             for(int i=0; i<size; i++){
                 arr[i] = 0;
