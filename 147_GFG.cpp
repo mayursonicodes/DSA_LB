@@ -1,0 +1,1 @@
+//! delete N nodes after M nodes
