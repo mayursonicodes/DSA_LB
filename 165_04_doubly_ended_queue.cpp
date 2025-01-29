@@ -79,12 +79,16 @@ class Deque{
             }
 
             //! circular nature
-            else if(front == size-1)
+            else if(front == size-1){
+                arr[front] = -1;
                 front = 0;
+            }
 
             //! normal flow
-            else
+            else{
+                arr[front] = -1;
                 front++;
+            }
         }
 
         void popRear(){
@@ -101,12 +105,16 @@ class Deque{
             }
 
             //! circular nature
-            else if(rear == 0)
+            else if(rear == 0){
+                arr[rear] = -1;
                 rear = size-1;
+            }
 
             //! normal flow
-            else
+            else{
+                arr[rear] = -1;
                 rear--;
+            }
         }
 };
 
