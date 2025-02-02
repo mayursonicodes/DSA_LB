@@ -21,6 +21,8 @@ class CQueue{
         void push(int data){
 
             //! Queue is full
+            //todo We can also use this condition
+            // if(rear == (front-1) % (size-1))
             if((front == 0 && rear == size-1) || (rear == front-1))
                 cout<<"Q is full, cannot insert"<<endl;
             
