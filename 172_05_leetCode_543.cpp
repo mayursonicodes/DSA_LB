@@ -2,23 +2,27 @@
 
 class Solution {
 public:
-    int maxDepth(TreeNode* root) {
-        if(root == NULL) 
-        return 0;
 
-        int leftHeight = maxDepth(root->left);
-        int rightHeight = maxDepth(root->right);
-        int ans = max(leftHeight, rightHeight) + 1;
-        return ans;
+    int height(TreeNode* root){
+        if(root == NULL)
+            return 0;
+        
+        int leftHeight = height(root->left);
+        int rightHeight = height(root->right);
+
+        return max(leftHeight, rightHeight) + 1;
     }
+
     int diameterOfBinaryTree(TreeNode* root) {
-        if(root == NULL) 
-        return 0;
+        if(root == NULL)
+            return 0;
+        
+        int opt1 = diameterOfBinaryTree(root->left);
+        int opt2 = diameterOfBinaryTree(root->right);
+        int opt3 = height(root->left) + height(root->right);
 
-        int op1 = diameterOfBinaryTree(root->left);
-        int op2 = diameterOfBinaryTree(root->right);
-        int op3 = maxDepth(root->left) + 1 + maxDepth(root->right);
-        int ans = max(op1, max(op2, op3));
-        return ans ;
+        return max(opt1, max(opt2, opt3));
     }
+
+    // ! APPROACH 2 IS LEFT
 };
