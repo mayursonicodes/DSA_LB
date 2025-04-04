@@ -4,9 +4,11 @@
 using namespace std;
 
 void arrayMax(int arr[], int size, int index, int &maxi){ //! if use (int maxi), value will not change in main program
-    if(index >= size) return;
+    if(index >= size)
+        return;
 
-    if(arr[index] > maxi) maxi=arr[index];
+    if(arr[index] > maxi)
+        maxi=arr[index];
 
     arrayMax(arr, size, index+1, maxi);
 }

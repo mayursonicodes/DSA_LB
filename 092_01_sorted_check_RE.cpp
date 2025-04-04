@@ -4,10 +4,13 @@
 using namespace std;
 
 bool sortedCheck(vector<int> &vec, int &size, int index){ //! Use reference where ever is needed to save memory
-    if(index == size-1) return true;
+    if(index == size-1)
+        return true;
 
-    if(vec[index] < vec[index+1]) return sortedCheck(vec, size, index+1); //! we have use return because function is of bool type
-    else return false;
+    if(vec[index] < vec[index+1])
+        return sortedCheck(vec, size, index+1); //! we have use return because function is of bool type
+    else
+        return false;
 }
 
 int main(){

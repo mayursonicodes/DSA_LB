@@ -4,13 +4,17 @@
 using namespace std;
 
 int binarySearch(vector<int> vec, int start, int end, int target){
-    if(start > end) return -1;
+    if(start > end)
+        return -1;
 
     int mid = (start+end)/2;
-    if(vec[mid] == target) return mid;
+    if(vec[mid] == target)
+        return mid;
 
-    if(vec[mid] > target) return binarySearch(vec, start, mid-1, target);
-    else return binarySearch(vec, mid+1, end, target);
+    if(vec[mid] > target)
+        return binarySearch(vec, start, mid-1, target);
+    else
+        return binarySearch(vec, mid+1, end, target);
 }
 
 int main(){

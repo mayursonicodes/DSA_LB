@@ -4,7 +4,8 @@
 using namespace std;
 
 void printDigit(int n){
-    if(n == 0) return;
+    if(n == 0)
+        return;
 
     printDigit(n/10);
 
