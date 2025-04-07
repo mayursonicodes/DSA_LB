@@ -1,4 +1,4 @@
-//! Important
+//! Important (inclusion exclusion pattern)
 //todo In output there is empty string also
 
 #include<iostream>
