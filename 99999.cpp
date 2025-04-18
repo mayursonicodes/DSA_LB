@@ -1,15 +1,11 @@
-#include<iostream>
-#include<vector>
-#include<string.h>
-#include<queue>
-#include<stack>
-using namespace std;
-
-int main(){
-
-    int a;
-    cin>>a;
-    cout<<a;
-
+#include <stdio.h> 
+int main()
+{
+    int c = 5, no = 1000;
+    do {
+        no /= c;
+    } while(c--);
+ 
+    printf ("%d\n", no);
     return 0;
 }

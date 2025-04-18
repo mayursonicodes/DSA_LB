@@ -30,7 +30,7 @@ class Solution {
             return left_part;
         else if(left_part == NULL && right_part != NULL)
             return right_part;
-            return root;
         else
+            return root;
     }
     };
