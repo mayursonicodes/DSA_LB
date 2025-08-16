@@ -1,0 +1,50 @@
+//! Book Allocation Problem
+
+class Solution {
+public:
+
+    bool isPossibleSolution(vector<int> nums, int k, int mid){
+        int pageSum = 0;
+        int student = 1;
+
+        for(int i=0; i<nums.size(); i++){
+            if(nums[i] > mid)
+                return false;
+
+            if(pageSum + nums[i] > mid){
+                student++;
+                pageSum = nums[i];
+                if(student > k){
+                    return false;
+                }
+            }
+            else{
+                pageSum += nums[i];
+            }
+        }
+        return true;
+    }
+
+    int splitArray(vector<int>& nums, int k) {
+        if(k > nums.size())
+            return -1;
+
+        int ans = -1;
+
+        int start = 0;
+        int end = accumulate(nums.begin(), nums.end(), 0);
+
+        while(start <= end){
+            int mid = start + (end-start)/2;
+
+            if(isPossibleSolution(nums, k, mid)){
+                ans = mid;
+                end = mid-1;
+            }
+            else{
+                start = mid+1;
+            }
+        }
+        return ans;
+    }
+};
