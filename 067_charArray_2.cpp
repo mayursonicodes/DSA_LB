@@ -13,6 +13,9 @@ int main(){
     cout<<"Your name is "<<name<<endl;
 
     cout<<name[4];
+
+    //! cin>>s → works for single word (stops at space).
+    //! getline(cin, s) → works for full line (including spaces).
     
     return 0;
 }
