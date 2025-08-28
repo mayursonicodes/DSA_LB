@@ -56,9 +56,63 @@ int main(){
     
     return 0;
 }
+// --------------------------------------------------------------------------------------------------------
 
+//! Doesn't exceed memory limit
+class Solution {
+public:
+    bool isPalindrome(string s){
+        int i = 0;
+        int j = s.length()-1;
+
+        while(i < j){
+            if(s[i] != s[j])
+                return false;
+            i++, j--;
+        }
+        return true;
+    }
+
+    int countSubstrings(string s) {
+        int count = 0;
+
+        for(int i=0; i<s.length(); i++){
+            for(int j = i; j<s.length(); j++){
+                if(isPalindrome(s.substr(i, j-i+1)))
+                    count++;
+            }
+        }
+        return count;
+    }
+};
 // --------------------------------------------------------------------------------------------------------
 
 // todo Love Babber -->
 // ! very very important
 
+class Solution {
+public:
+
+    int expandAroundIndex(string s, int left, int right){
+        int count = 0;
+        while(left >= 0 && right < s.length() && s[left] == s[right]){
+            count++;
+            left--, right++;
+        }
+        return count;
+    }
+
+    int countSubstrings(string s) {
+        int totalCount = 0;
+
+        for(int i=0; i<s.length(); i++){
+            int oddAns = expandAroundIndex(s, i, i);
+            totalCount += oddAns;
+
+            int evenAns = expandAroundIndex(s, i, i+1);
+            totalCount += evenAns;
+        }
+
+        return totalCount;
+    }
+};
