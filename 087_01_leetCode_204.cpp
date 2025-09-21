@@ -66,3 +66,4 @@ int countPrimes(int n){
 // todo Segmented Sieve
 // ! search on google
 // ! instead of starting of 0 for checking prime we have given low, high(10 to 51 prime)
+// ! Instead of N, we have given a range and we have to find the prime number between that range.
